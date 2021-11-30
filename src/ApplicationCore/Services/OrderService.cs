@@ -60,8 +60,8 @@ namespace Microsoft.eShopWeb.ApplicationCore.Services
 
         private async Task PlaceOrderInWarehouse(Order order)
         {
-            const string connectionString = "Endpoint=sb://orderitemsreserver.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=ASRiVSBcLovumQ9T4C/DM0D+yX5ZFGqbwKWa1NEpzDc=";
-            const string queueName = "orderitemsreserver";
+            const string connectionString = "";
+            const string queueName = "";
 
             await using var client = new ServiceBusClient(connectionString);
             await using var sender = client.CreateSender(queueName);
@@ -78,7 +78,7 @@ namespace Microsoft.eShopWeb.ApplicationCore.Services
 
         private async Task ProcessOrder(Order order)
         {
-            const string azureFunctionUrl = "https://deliveryorderprocessor20211130202723.azurewebsites.net/api/processOrder";
+            const string azureFunctionUrl = "";
 
             var processedInfo = new
             {
